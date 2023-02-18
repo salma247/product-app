@@ -1,0 +1,154 @@
+/* color variables in CSS */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /* color variables in CSS */
+    --black: #181823;
+    --white: #E9F8F9;
+    --light-blue: #C0EEF2;
+    --blue: #537FE7;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 2rem 3rem;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* line under the header with shadow */
+    border-bottom: 1px solid #8babad;
+    padding-bottom: 1rem;
+}
+
+header .buttons button {
+    margin-right: 1rem;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    font-size: 0.9rem;
+    transition: all 0.1s ease-in-out;
+    font-weight: 600;
+}
+
+header .buttons button:hover{
+    transform: translateY(2px);
+}
+
+header .buttons button:active{
+    transform: translateY(4px);
+}
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin-top: 2rem;
+}
+
+.products .product{
+    background-color: var(--light-blue);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.products .product .product_details{
+    text-align: center;
+    font-weight: 600;
+    color: var(--black);
+}
+
+#product_form{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-blue);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    margin-top: 2rem;
+}
+
+#product_form .form-group{
+    width: 500px;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 1rem;
+}
+
+#product_form .form-group label{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+#product_form .form-group input{
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    border: 1px solid #8babad;
+}
+
+#product_form .form-group input:focus{
+    outline: none;
+    border: 1px solid var(--blue);
+}
+
+#product_form .form-group select{
+    width: 200px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    border: 1px solid #8babad;
+}
+
+#product_form .form-group p{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--blue);
+    grid-column: 2;
+}
+
+
+.errors{
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    list-style: none;
+}
+
+
+
