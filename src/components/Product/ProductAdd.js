@@ -108,7 +108,7 @@ function ProductAdd() {
 
       // add product to context
       productCtx.addProduct(product);
-      navigate("/");
+      navigate("/product-app");
     }
   };
 
@@ -118,7 +118,7 @@ function ProductAdd() {
         <h1>Product Add</h1>
         <div className="buttons">
           <button onClick={addProduct}>ADD</button>
-          <Link to="/"><button>CANCEL</button></Link>
+          <Link to="/product-app"><button>CANCEL</button></Link>
         </div>
       </header>
 

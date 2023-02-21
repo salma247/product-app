@@ -61,12 +61,14 @@ const ProductProvider = ({ children }) => {
     };
 
     const massDelete = async () => {
+        const jsonDeleteProducts = JSON.stringify(state.deleteProducts);
+        console.log(jsonDeleteProducts);
         try {
-            await axios.delete(server, {
-                data: {
-                    deleteProducts: state.deleteProducts,
+            await axios.get(server, {
+                params: {
+                    deleteProducts: jsonDeleteProducts,
                 },
-            });
+            }); // send deleteProducts array to server using GET method (because of 000webhostapp.com) => "https://junior-product-app.000webhostapp.com/?deleteProducts=[sku1,sku2,sku3]'
             setDeleteProducts([]);
             getProducts();
         }

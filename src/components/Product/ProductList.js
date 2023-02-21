@@ -25,7 +25,7 @@ export default function ProductList() {
             <header>
                 <h1>Product List</h1>
                 <div className="buttons">
-                    <Link to="/products-app/addProduct">ADD</Link>
+                    <Link to="/products-app/addProduct"><button>ADD</button></Link>
                     <button onClick={handleMassDelete}>MASS DELETE</button>
                 </div>
             </header>
