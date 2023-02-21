@@ -108,7 +108,7 @@ function ProductAdd() {
 
       // add product to context
       productCtx.addProduct(product);
-      navigate("/product-app");
+      navigate("/products-app");
     }
   };
 
