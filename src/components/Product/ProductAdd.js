@@ -118,7 +118,7 @@ function ProductAdd() {
         <h1>Product Add</h1>
         <div className="buttons">
           <button onClick={addProduct}>ADD</button>
-          <Link to="/product-app"><button>CANCEL</button></Link>
+          <Link to="/products-app"><button>CANCEL</button></Link>
         </div>
       </header>
 
