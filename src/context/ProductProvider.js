@@ -2,7 +2,8 @@ import { useReducer } from "react";
 import { ProductContext } from "../context/product-context";
 import axios from "axios";
 
-const server = "https://junior-product-app.000webhostapp.com/";
+// const server = "https://junior-product-app.000webhostapp.com/";
+const server = "http://localhost/juniortest/"
 
 const initialState = {
     products: [],
@@ -49,10 +50,14 @@ const ProductProvider = ({ children }) => {
     };
 
     const addProduct = async (product) => {
+        const jsonProduct = JSON.stringify(product);
         try {
-            await axios.post(server, {
-                product: product,
-            });
+            console.log(jsonProduct);
+            await axios.get(server, {
+                params: {
+                    product: jsonProduct,
+                },
+            }); // send product object to server using GET method (because of 000webhostapp.com) => "https://junior-product-app.000webhostapp.com/?product={sku:sku1,name:name1,price:price1,quantity:quantity1}'
             getProducts();
         }
         catch (error) {
@@ -62,7 +67,6 @@ const ProductProvider = ({ children }) => {
 
     const massDelete = async () => {
         const jsonDeleteProducts = JSON.stringify(state.deleteProducts);
-        console.log(jsonDeleteProducts);
         try {
             await axios.get(server, {
                 params: {
